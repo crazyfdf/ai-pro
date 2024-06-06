@@ -1,0 +1,86 @@
+{
+  "name": "gptToI18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "pluginInfo": {
+    "name": "Rectangle Creator",
+    "api": "1.0.0",
+    "id": {
+      "masterGo": "80090183159920",
+      "figma": "1183407018802193143",
+      "jsDesign": "_Cm929J-cu10cmqrzbnIS"
+    },
+    "editorType": {
+      "masterGo": [
+        "masterGo"
+      ],
+      "figma": [
+        "figma",
+        "figjam"
+      ],
+      "jsDesign": [
+        "jsDesign"
+      ]
+    }
+  },
+  "scripts": {
+    "dev-web": "vite --mode=development",
+    "dev-mg": "cross-env CLIENT_ENV=masterGo npm run dev",
+    "dev-figma": "cross-env CLIENT_ENV=figma npm run dev",
+    "dev-js": "cross-env CLIENT_ENV=jsDesign npm run dev",
+    "dev": "npm run clear&& cross-env NODE_ENV=development CLIENT_SHOW=false run-p dev:*",
+    "dev:restartPlugin": "esno scripts/restartPlugin.ts",
+    "dev:prepare": "esno scripts/prepare.ts",
+    "dev:web": "vite build --mode=development",
+    "dev:code": "vite build --mode=development --config=vite.config.code.ts",
+    "----------------": "",
+    "build-all": "cross-env NODE_ENV=production run-s clear-all build-mg build-figma build-js",
+    "build-mg": "cross-env NODE_ENV=production CLIENT_ENV=masterGo run-s clear build:*",
+    "build-figma": "cross-env NODE_ENV=production CLIENT_ENV=figma run-s clear build:*",
+    "build-js": "cross-env NODE_ENV=production CLIENT_ENV=jsDesign run-s clear build:*",
+    "build": "cross-env NODE_ENV=production run-s build:*",
+    "build:prepare": "esno scripts/prepare.ts",
+    "build:web": "vite build",
+    "build:code": "vite build --config=vite.config.code.ts",
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "eslint \"**/*.{js,jsx,ts,tsx,json}\" --fix",
+    "clear-all": "rimraf plugin/**",
+    "clear": "esno scripts/clearPlugin.ts",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.15.11",
+    "@types/rimraf": "^3.0.2",
+    "@vitejs/plugin-vue": "^2.3.4",
+    "autoprefixer": "^10.4.17",
+    "chokidar": "^3.5.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.19.0",
+    "esno": "0.16.3",
+    "fs-extra": "^10.0.0",
+    "husky": "^7.0.2",
+    "javascript-obfuscator": "^4.0.0",
+    "kolorist": "^1.5.0",
+    "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "rollup-obfuscator": "^3.0.1",
+    "sass": "^1.49.7",
+    "terser": "^5.15.1",
+    "typescript": "^4.5.4",
+    "unocss": "^0.58.5",
+    "unplugin-auto-import": "^0.5.11",
+    "unplugin-vue-components": "^0.17.13",
+    "vite": "^5.2.12",
+    "vite-node": "^0.26.3",
+    "vite-plugin-singlefile": "^2.0.1",
+    "vue-tsc": "^0.29.8"
+  }
+}

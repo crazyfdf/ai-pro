@@ -1,0 +1,11 @@
+{
+  "name": "gptToI18n",
+  "id": "1183407018802193143",
+  "api": "1.0.0",
+  "main": "code/index.js",
+  "ui": "ui/index.html",
+  "editorType": [
+    "figma",
+    "figjam"
+  ]
+}
